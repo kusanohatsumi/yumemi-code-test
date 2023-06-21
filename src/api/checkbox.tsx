@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function Todouhuken() {
+export default function Checkbox() {
   const [state, setState] = useState([]);
   const url = " https://opendata.resas-portal.go.jp/api/v1/prefectures";
   useEffect(() => {
