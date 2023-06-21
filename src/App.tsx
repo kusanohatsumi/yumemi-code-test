@@ -1,4 +1,5 @@
-import Todouhuken from "./api/todouhuken";
+import "./App.css";
+import Todouhuken from "./api/checkbox";
 
 function App() {
   return (
