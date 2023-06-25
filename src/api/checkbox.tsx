@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Checkbox() {
   const [state, setState] = useState([]);
-  const url = " https://opendata.resas-portal.go.jp/api/v1/prefectures";
+  const url = import.meta.env.VITE_API_URL_JAPAN;
   useEffect(() => {
     fetch(url, {
       headers: {
