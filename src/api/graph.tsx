@@ -1,7 +1,9 @@
-export default function Graph() {
+export default function Graph(props: any) {
+  const popData = props.popData;
+
   return (
     <>
-      <h2>人口のグラフ描画</h2>
+      <div></div>
     </>
   );
 }
