@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
-import { Prefectures } from "../types/type";
+import { Population, Prefectures } from "../types/type";
 
 export default function Checkbox() {
   const [state, setState] = useState([]);
   const [prefecuture, setPrefecture] = useState<Prefectures[]>([]);
+  const [population, setPopulation] = useState<Population[]>([]);
+
   // 都道府県のAPIを取得する
-  const url = import.meta.env.VITE_API_URL_PREFECUTURE;
   useEffect(() => {
-    fetch(url, {
+    fetch(import.meta.env.VITE_API_URL_PREFECUTURE, {
       headers: {
         "X-API-KEY": import.meta.env.VITE_API_KEY,
       },
@@ -24,7 +25,20 @@ export default function Checkbox() {
     // チェックがついたときの処理
     if (value.target.checked === true) {
       setPrefecture([...prefecuture, value.target.value]);
-      console.log(new Set([...prefecuture, value.target.value]));
+      // console.log(new Set([...prefecuture, value.target.value]));
+
+      // 人口のAPIを取得する
+      fetch(`${import.meta.env.VITE_API_URL_POPULATION}=${value.target.id}`, {
+        headers: {
+          "X-API-KEY": import.meta.env.VITE_API_KEY,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setPopulation(data.result);
+          console.log(data.result);
+        })
+        .catch(() => alert("error"));
     }
     // チェックが外れたときの処理
     else {
