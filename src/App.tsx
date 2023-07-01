@@ -3,6 +3,7 @@ import Checkbox from "./api/checkbox";
 
 import { useEffect, useState } from "react";
 import { Population, Prefectures } from "./types/type";
+import Graph from "./api/graph";
 
 function App() {
   const [prefecuture, setPrefecture] = useState<Prefectures[]>([]);
@@ -53,7 +54,10 @@ function App() {
   return (
     <>
       <h1>Title</h1>
+      <h2>都道府県</h2>
       <Checkbox prefData={prefecuture} onChange={handleAddPrefecture} />
+      <h2>人口推移グラフ</h2>
+      <Graph />
     </>
   );
 }
