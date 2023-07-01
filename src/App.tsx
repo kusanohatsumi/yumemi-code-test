@@ -7,9 +7,10 @@ import Graph from "./api/graph";
 
 function App() {
   const [prefecuture, setPrefecture] = useState<Prefectures[]>([]);
-  const [spot_prefecuture, setSpot_Prefectures] = useState<Prefectures[]>([]);
+  const [spotPrefecuture, setSpotPrefectures] = useState<Prefectures[]>([]);
 
   const [population, setPopulation] = useState<Population[]>([]);
+  const [spotPopulation, setSpotPopulation] = useState<Population[]>([]);
 
   // 都道府県のAPIを取得する
   useEffect(() => {
@@ -29,10 +30,8 @@ function App() {
   const handleAddPrefecture = (value: any) => {
     // チェックがついたときの処理
     if (value.target.checked === true) {
-      setSpot_Prefectures([...spot_prefecuture, value.target.value]);
-      console.log([...spot_prefecuture, value.target.value]);
-
-      // console.log(new Set([...prefecuture, value.target.value]));
+      setSpotPrefectures([...spotPrefecuture, value.target.value]);
+      setSpotPopulation([...spotPopulation, value.target.name]);
 
       // 人口のAPIを取得する
       fetch(`${import.meta.env.VITE_API_URL_POPULATION}=${value.target.id}`, {
@@ -48,8 +47,9 @@ function App() {
     }
     // チェックが外れたときの処理
     else {
-      spot_prefecuture.splice(spot_prefecuture.indexOf(value.target.value), 1);
-      console.log(spot_prefecuture);
+      spotPrefecuture.splice(spotPrefecuture.indexOf(value.target.value), 1);
+
+      spotPopulation.splice(spotPopulation.indexOf(value.target.name), 1);
     }
   };
 
@@ -59,7 +59,7 @@ function App() {
       <h2>都道府県</h2>
       <Checkbox prefData={prefecuture} onChange={handleAddPrefecture} />
       <h2>人口推移グラフ</h2>
-      <Graph popData={population} />
+      <Graph popData={population} popId={spotPrefecuture} />
     </>
   );
 }
