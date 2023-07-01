@@ -29,7 +29,9 @@ function App() {
   const handleAddPrefecture = (value: any) => {
     // チェックがついたときの処理
     if (value.target.checked === true) {
-      setSpot_Prefectures([...prefecuture, value.target.value]);
+      setSpot_Prefectures([...spot_prefecuture, value.target.value]);
+      console.log([...spot_prefecuture, value.target.value]);
+
       // console.log(new Set([...prefecuture, value.target.value]));
 
       // 人口のAPIを取得する
@@ -41,13 +43,13 @@ function App() {
         .then((res) => res.json())
         .then((data) => {
           setPopulation(data.result);
-          console.log(data.result);
         })
         .catch(() => alert("error"));
     }
     // チェックが外れたときの処理
     else {
-      prefecuture.splice(prefecuture.indexOf(value.target.value), 1);
+      spot_prefecuture.splice(spot_prefecuture.indexOf(value.target.value), 1);
+      console.log(spot_prefecuture);
     }
   };
 
@@ -57,7 +59,7 @@ function App() {
       <h2>都道府県</h2>
       <Checkbox prefData={prefecuture} onChange={handleAddPrefecture} />
       <h2>人口推移グラフ</h2>
-      <Graph />
+      <Graph popData={population} />
     </>
   );
 }
