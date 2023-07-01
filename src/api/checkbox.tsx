@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 export default function Checkbox() {
   const [state, setState] = useState([]);
-  const url = import.meta.env.VITE_API_URL_JAPAN;
+  const url = import.meta.env.VITE_API_URL_PREFECUTURE;
   useEffect(() => {
     fetch(url, {
       headers: {
@@ -30,12 +30,17 @@ export default function Checkbox() {
                     id={doc.prefCode}
                     name={doc.prefName}
                     value={doc.prefCode}
-                    onClick={() => console.log(doc.prefCode)}
+                    onClick={() =>
+                      console.log(
+                        `${import.meta.env.VITE_API_URL_POPULATION}=${
+                          doc.prefCode
+                        }`
+                      )
+                    }
                   />
                   <label htmlFor={doc.prefCode}>{doc.prefName}</label>
                 </div>
               ))}
-          {/* <button type="submit">比較する</button> */}
         </form>
       </div>
     </>
