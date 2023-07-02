@@ -3,24 +3,33 @@
   padding: 0;
 }
 
+body {
+  color: steelblue;
+  padding: 12px;
+}
+
 h1 {
   width: 100%;
   height: 50px;
   line-height: 50px;
   text-align: center;
-  border-bottom: solid 3px #333;
-  margin-bottom: 12px;
+  border-bottom: solid 3px steelblue;
+  margin-bottom: 24px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.contents {
+  flex: 1;
 }
 
 h2 {
   display: inline-block;
   padding: 4px 8px;
-  border: solid 2px #333;
-}
-
-.checkbox {
-  width: 100%;
-  margin: 0 auto;
+  color: #fff;
+  background-color: steelblue;
 }
 
 form {
@@ -35,8 +44,8 @@ form {
   padding-left: 8px;
   display: flex;
   align-items: center;
-  border-left: solid 5px #333;
-  border-bottom: solid 1px #333;
+  border-left: solid 5px steelblue;
+  border-bottom: solid 1px steelblue;
 }
 
 .formItem label {
@@ -44,4 +53,18 @@ form {
   height: 100%;
   line-height: 35px;
   padding-left: 8px;
+}
+
+.prefUi {
+  margin: 12px 0 16px;
+}
+
+.prefUi button {
+  width: 100px;
+  height: 30px;
+  margin-right: 4px;
+  border: solid 2px steelblue;
+  background-color: aliceblue;
+  color: steelblue;
+  cursor: pointer;
 }
