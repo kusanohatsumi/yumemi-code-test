@@ -22,6 +22,8 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data.result);
+
         setPrefecture(data.result);
       })
       .catch(() => alert("error"));
