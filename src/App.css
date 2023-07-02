@@ -19,7 +19,7 @@ h2 {
 }
 
 .checkbox {
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -29,7 +29,7 @@ form {
 }
 
 .formItem {
-  width: 120px;
+  width: 90px;
   height: 35px;
   margin: 8px;
   padding-left: 8px;
