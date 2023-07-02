@@ -87,7 +87,6 @@ function App() {
         <div className="contents">
           <h2>都道府県</h2>
           <Checkbox prefData={prefecuture} onChange={handleAddPrefecture} />
-
           <div className="prefUi">
             {type.map((item) => (
               // ここをクリックして各人口のuiに変更させようとした
