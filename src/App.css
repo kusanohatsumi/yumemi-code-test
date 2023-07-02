@@ -48,7 +48,7 @@ h2 {
   border-bottom: solid 1px steelblue;
 }
 
-.checkboxItem label {
+.checkboxItem > label {
   width: 100%;
   height: 100%;
   line-height: 35px;
@@ -59,7 +59,7 @@ h2 {
   margin: 12px 0 16px;
 }
 
-.prefUi button {
+.prefUi > button {
   width: 100px;
   height: 30px;
   margin-right: 4px;
