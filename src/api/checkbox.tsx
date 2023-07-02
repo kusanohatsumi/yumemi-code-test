@@ -3,7 +3,7 @@ export default function Checkbox(props: any) {
 
   return (
     <>
-      <form>
+      <div>
         {prefData === undefined
           ? "Loading..."
           : prefData.map((doc: any) => (
@@ -18,7 +18,7 @@ export default function Checkbox(props: any) {
                 <label htmlFor={doc.prefCode}>{doc.prefName}</label>
               </div>
             ))}
-      </form>
+      </div>
     </>
   );
 }
