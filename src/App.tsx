@@ -86,11 +86,7 @@ function App() {
       <div className="container">
         <div className="contents">
           <h2>都道府県</h2>
-          {prefecuture === undefined ? (
-            false
-          ) : (
-            <Checkbox prefData={prefecuture} onChange={handleAddPrefecture} />
-          )}
+          <Checkbox prefData={prefecuture} onChange={handleAddPrefecture} />
 
           <div className="prefUi">
             {type.map((item) => (
