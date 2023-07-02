@@ -14,7 +14,7 @@ function App() {
   const [spotPopulation, setSpotPopulation] = useState<SpotPopulation[]>([]);
   // 都道府県のAPIを取得する
   useEffect(() => {
-    fetch(import.meta.env.VITE_API_URL_PREFECUTURE, {
+    fetch(`${import.meta.env.VITE_API_URL_PREFECUTURE}`, {
       headers: {
         "X-API-KEY": import.meta.env.VITE_API_KEY,
       },
