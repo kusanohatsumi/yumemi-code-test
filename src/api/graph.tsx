@@ -1,9 +1,53 @@
+import { useState } from "react";
+import {
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 export default function Graph(props: any) {
-  const popData = props.popData;
+  const populationData = props.populationData;
+  const [data, setData] = useState([]);
+
+  if (populationData.length === 0) {
+    null;
+  } else {
+    console.log(props);
+    console.log([...data, { item: props.populationData }]);
+  }
 
   return (
     <>
-      <div></div>
+      <div>
+        {populationData.length === 0 ? null : (
+          <LineChart
+            width={500}
+            height={500}
+            data={populationData[0].data}
+            margin={{
+              top: 20,
+              right: 20,
+              left: 50,
+              bottom: 20,
+            }}
+          >
+            <YAxis dataKey="value" />;
+            <XAxis dataKey="year" />;
+            <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
+            <Line
+              type="monotone"
+              name={populationData[0].prefName}
+              dataKey="value"
+              stroke="#82ca9d"
+            />
+            <Legend />
+            <Tooltip />
+          </LineChart>
+        )}
+      </div>
     </>
   );
 }

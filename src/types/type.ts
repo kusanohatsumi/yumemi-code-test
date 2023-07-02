@@ -8,10 +8,11 @@ export type SpotPrefectures = {
 };
 
 export type Population = {
-  id: number;
-  data: { year: number; value: number };
+  // data: { year: number; value: number };
+  year: number;
+  value: number;
 };
 export type SpotPopulation = {
-  id: number;
+  prefName: string;
   data: { year: number; value: number };
 };
