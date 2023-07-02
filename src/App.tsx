@@ -78,9 +78,6 @@ function App() {
       name: "老年人口",
     },
   ];
-  const handleChange = (eve: any) => {
-    // 処理
-  };
 
   return (
     <>
@@ -92,12 +89,7 @@ function App() {
           <div className="prefUi">
             {type.map((item) => (
               // ここをクリックして各人口のuiに変更させようとした
-              <button
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                onClick={handleChange}
-              >
+              <button key={item.id} id={item.id} name={item.name}>
                 {item.name}
               </button>
             ))}

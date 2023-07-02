@@ -1,4 +1,3 @@
-import { useState } from "react";
 import {
   CartesianGrid,
   Legend,
@@ -10,13 +9,11 @@ import {
 } from "recharts";
 export default function Graph(props: any) {
   const populationData = props.populationData;
-  const [data, setData] = useState([]);
 
   if (populationData.length === 0) {
     null;
   } else {
     console.log(props);
-    console.log([...data, { item: props.populationData }]);
   }
 
   return (
