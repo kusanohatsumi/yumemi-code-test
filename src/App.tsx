@@ -13,8 +13,9 @@ function App() {
   // 選択された都道府県の人口APIを格納するstate
   const [spotPopulation, setSpotPopulation] = useState<SpotPopulation[]>([]);
   // 都道府県のAPIを取得する
+  const url = "https://opendata.resas-portal.go.jp/api/v1/prefectures";
   useEffect(() => {
-    fetch("https://opendata.resas-portal.go.jp/api/v1/prefectures", {
+    fetch(url, {
       headers: {
         "X-API-KEY": import.meta.env.VITE_API_KEY,
       },
