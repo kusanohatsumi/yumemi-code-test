@@ -38,7 +38,7 @@ export default function Graph(props: any) {
               type="monotone"
               name={populationData[0].prefName}
               dataKey="value"
-              stroke="#82ca9d"
+              stroke="#4682b4"
             />
             <Legend />
             <Tooltip />
