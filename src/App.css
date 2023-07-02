@@ -48,7 +48,7 @@ h2 {
   border-bottom: solid 1px steelblue;
 }
 
-.formItem label {
+.checkboxItem label {
   width: 100%;
   height: 100%;
   line-height: 35px;
