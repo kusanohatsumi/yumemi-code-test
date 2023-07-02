@@ -79,15 +79,15 @@ function App() {
     },
   ];
 
-  console.log(prefecuture);
-
   return (
     <>
       <h1>総人口推移グラフ</h1>
       <div className="container">
         <div className="contents">
           <h2>都道府県</h2>
-          {prefecuture && (
+          {prefecuture === undefined ? (
+            false
+          ) : (
             <Checkbox prefData={prefecuture} onChange={handleAddPrefecture} />
           )}
 
