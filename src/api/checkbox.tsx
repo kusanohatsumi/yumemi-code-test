@@ -3,11 +3,11 @@ export default function Checkbox(props: any) {
 
   return (
     <>
-      <div>
+      <div className="checkbox">
         {prefData === undefined
-          ? "Loading..."
+          ? console.log("Loading...")
           : prefData.map((doc: any) => (
-              <div className="formItem" key={doc.prefCode}>
+              <div className="checkboxItem" key={doc.prefCode}>
                 <input
                   type="checkbox"
                   id={doc.prefCode}

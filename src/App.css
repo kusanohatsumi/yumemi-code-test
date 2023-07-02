@@ -32,12 +32,12 @@ h2 {
   background-color: steelblue;
 }
 
-form {
+.checkbox {
   display: flex;
   flex-wrap: wrap;
 }
 
-.formItem {
+.checkboxItem {
   width: 90px;
   height: 35px;
   margin: 8px;
